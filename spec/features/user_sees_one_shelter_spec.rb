@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe "user sees one shelter" do
-  describe "they visit /shelters/id" do
-    it "displays information one shelter" do
+  describe "they visit /shelters/:id" do
+    it "displays information for one shelter" do
       shelter1 = Shelter.create!({name: "Shelter1", address: "1 Shelter Ave", city: "1 City", state: "1 State", zip: "1 Zip"})
 
       visit '/shelters/:id'
@@ -13,5 +13,5 @@ describe "user sees one shelter" do
       expect(page).to have_content(shelter1.state)
       expect(page).to have_content(shelter1.zip)
     end
-  end 
+  end
 end
