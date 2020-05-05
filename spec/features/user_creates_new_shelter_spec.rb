@@ -18,10 +18,6 @@ describe "user creates a new shelter" do
         click_on "Create Shelter"
 
         expect(page).to have_content("New name")
-        expect(page).to have_content("New address")
-        expect(page).to have_content("New city")
-        expect(page).to have_content("New state")
-        expect(page).to have_content("New zip")
       end
     end
   end
