@@ -8,8 +8,8 @@ describe "user sees all shelters" do
 
       visit '/shelters'
 
-      expect(page).to have_content(shelter1.title)
-      expect(page).to have_content(shelter2.title)
+      expect(page).to have_content(shelter1.name)
+      expect(page).to have_content(shelter2.name)
     end
   end
 end
