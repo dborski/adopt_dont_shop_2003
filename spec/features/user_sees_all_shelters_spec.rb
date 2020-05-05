@@ -11,6 +11,7 @@ describe "user sees all shelters" do
 
       expect(page).to have_content(shelter1.name)
       expect(page).to have_content(shelter2.name)
+      expect(page).to have_link("New Shelter")
     end
   end
 end
