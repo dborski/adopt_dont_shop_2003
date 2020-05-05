@@ -7,7 +7,7 @@ describe "user sees all shelters" do
       shelter1 = create(:shelter)
       shelter2 = create(:shelter)
 
-      visit shelters_path
+      visit "/shelters/"
 
       expect(page).to have_content(shelter1.name)
       expect(page).to have_content(shelter2.name)

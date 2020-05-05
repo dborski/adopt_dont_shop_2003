@@ -7,7 +7,6 @@ describe "user sees one shelter" do
       shelter = create(:shelter)
 
       visit "/shelters/#{shelter.id}"
-      # visit shelters_path(:id)
 
       expect(page).to have_content(shelter.name)
       expect(page).to have_content(shelter.address)

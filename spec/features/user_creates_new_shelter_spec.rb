@@ -5,10 +5,10 @@ describe "user creates a new shelter" do
     describe "they fill in all shelter attributes" do
       it "creates a new shelter" do
 
-        visit shelters_path
+        visit "/shelters/"
         click_link "New Shelter"
 
-        expect(current_path).to eq(new_shelter_path)
+        expect(current_path).to eq("/shelters/new")
 
         fill_in "shelter[name]", with: "New name"
         fill_in "shelter[address]", with: "New address"
