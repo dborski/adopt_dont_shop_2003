@@ -13,6 +13,7 @@ describe "user sees one shelter" do
       expect(page).to have_content(shelter.city)
       expect(page).to have_content(shelter.state)
       expect(page).to have_content(shelter.zip)
+      expect(page).to have_link("Update Shelter")
     end
   end
 end

@@ -17,6 +17,8 @@ describe "user creates a new shelter" do
         fill_in "shelter[zip]", with: "New zip"
         click_on "Create Shelter"
 
+        expect(current_path).to eq("/shelters/")
+
         expect(page).to have_content("New name")
       end
     end
