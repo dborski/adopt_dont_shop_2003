@@ -10,7 +10,7 @@ describe "user updates a shelter" do
         visit "shelters/#{shelter.id}"
         click_link "Update Shelter"
 
-        expect(current_path).to eq("shelters/#{shelter.id}/edit")
+        expect(current_path).to eq("/shelters/#{shelter.id}/edit")
 
         fill_in "shelter[name]", with: "Update name"
         fill_in "shelter[address]", with: "Update address"
@@ -19,8 +19,8 @@ describe "user updates a shelter" do
         fill_in "shelter[zip]", with: "Update zip"
         click_on "Submit"
 
-        expect(current_path).to eq("shelters/#{shelter.id}")
-        
+        expect(current_path).to eq("/shelters/#{shelter.id}")
+
         expect(page).to have_content("Update name")
         expect(page).to have_content("Update address")
         expect(page).to have_content("Update city")
