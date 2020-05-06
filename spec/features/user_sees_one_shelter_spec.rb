@@ -14,6 +14,7 @@ describe "user sees one shelter" do
       expect(page).to have_content(shelter.state)
       expect(page).to have_content(shelter.zip)
       expect(page).to have_link("Update Shelter")
+      expect(page).to have_button("Delete Shelter")
     end
   end
 end
