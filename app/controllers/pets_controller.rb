@@ -4,4 +4,8 @@ class PetsController < ApplicationController
     @pets = Pet.all
   end
 
+  def shelter_index
+    @pets = Pet.all
+  end
+
 end
