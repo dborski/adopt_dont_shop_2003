@@ -4,10 +4,6 @@ class PetsController < ApplicationController
     @pets = Pet.all
   end
 
-  def shelter_index
-    @pets = Pet.all
-  end
-
   def show
     @pet = Pet.find(params[:id])
   end
