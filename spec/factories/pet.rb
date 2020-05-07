@@ -5,6 +5,7 @@ FactoryBot.define do
     sequence(:sex) {|n| "Male" }
     sequence(:img_url) { |n| "http://img.com/#{1 + n}" }
     adoption_status { "adoptable" }
+    description { "cute" }
     shelter
   end
 end
