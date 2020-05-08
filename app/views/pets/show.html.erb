@@ -8,4 +8,4 @@
   <li><p><%= @pet.adoption_status %></p></li>
 </ul>
 
-<%= link_to "Update Pet", "/pets/new" %>
+<%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %>

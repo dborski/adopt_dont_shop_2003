@@ -22,31 +22,11 @@ describe "user updates a pet" do
         expect(current_path).to eq("/pets/#{pet.id}")
 
         expect(page).to have_content("Update name")
-        expect(page).to have_content("Update address")
-        expect(page).to have_content("Update city")
-        expect(page).to have_content("Update state")
-        expect(page).to have_content("Update zip")
+        # expect(page).to have_xpath("//img[@src = www.img and @alt= '#{pet.id}']")
+        expect(page).to have_content(10)
+        expect(page).to have_content("female")
+        expect(page).to have_content("really cute")
       end
     end
   end
 end
-
-
-
-
-# User Story 11, Pet Update
-#
-# As a visitor
-# When I visit a Pet Show page
-# Then I see a link to update that Pet "Update Pet"
-# When I click the link
-# I am taken to '/pets/:id/edit' where I see a form to edit the pet's data including:
-# - image
-# - name
-# - description
-# - approximate age
-# - sex
-# When I click the button to submit the form "Update Pet"
-# Then a `PATCH` request is sent to '/pets/:id',
-# the pet's data is updated,
-# and I am redirected to the Pet Show page where I see the Pet's updated information
