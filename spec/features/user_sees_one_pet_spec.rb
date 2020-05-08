@@ -17,6 +17,8 @@ describe "user sees one pet" do
       expect(page).to have_xpath("//img[@src = '#{pet1.img_url}' and @alt= '#{pet1.id}']")
 
       expect(page).to_not have_content(pet2.name)
+
+      expect(page).to have_content("Update Pet")
     end
   end
 end
