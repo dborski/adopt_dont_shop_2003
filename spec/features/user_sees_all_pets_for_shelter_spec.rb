@@ -25,6 +25,8 @@ describe "user sees all adoptable pets per shelter" do
       expect(page).to have_content(pet3.age)
       expect(page).to have_content(pet3.sex)
       expect(page).to have_xpath("//img[@src = '#{pet3.img_url}' and @alt= '#{pet3.id}']")
+
+      expect(page).to have_content("Create Pet")
     end
   end
 end
