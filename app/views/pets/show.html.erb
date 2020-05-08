@@ -1,6 +1,5 @@
 <h1><%= @pet.name %></h1>
 <ul>
-  <li><p><%= @pet.name %></p></li>
   <img src=<%= "#{@pet.img_url}" %> alt=<%= "#{@pet.id}" %> height="100" width="100">
   <li><p><%= @pet.age %></p></li>
   <li><p><%= @pet.sex %></p></li>
@@ -9,3 +8,6 @@
 </ul>
 
 <%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %>
+<%= form_tag "/pets/#{@pet.id}", method: :delete do %>
+  <%= submit_tag "Delete Pet" %>
+<% end %>
