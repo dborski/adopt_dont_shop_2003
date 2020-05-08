@@ -8,3 +8,6 @@
 </ul>
 
 <%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %>
+<%= form_tag "/pets/#{@pet.id}", method: :delete do %>
+  <%= submit_tag "Delete Pet" %>
+<% end %>
