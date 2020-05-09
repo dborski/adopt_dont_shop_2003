@@ -1,14 +1,29 @@
-<%= link_to "Pets", "/pets/"%> <%= link_to "Shelters", "/shelters/"%>
-
-<h1>Shelters</h1>
-
-<ul>
-  <% @shelters.each do |shelter| %>
-    <li>
-      <%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"  %> <%= link_to "Edit Shelter", "/shelters/#{shelter.id}/edit" %> 
-      <%= link_to "Delete Shelter", "/shelters/#{shelter.id}", method: :delete %>
-    </li>
-  <% end %>
-</ul>
-
-<a href="/shelters/new">New Shelter</a>
+<div class="container">
+  <div class="row">
+    <div class="col-6 left">
+      <%= link_to "Pets", "/pets/"%> 
+    </div>
+    <div class="col-6 left">
+      <%= link_to "Shelters", "/shelters/"%> 
+    </div>  
+  </div>
+  <div class="row">
+    <div class="col-6 center">
+      <h1>Shelters</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% @shelters.each do |shelter| %>
+        <%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"  %>
+        <%= link_to "Edit Shelter", "/shelters/#{shelter.id}/edit" %>
+        <%= link_to "Delete Shelter", "/shelters/#{shelter.id}", method: :delete %><br>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <%= link_to "New Shelter", "/shelters/new"%>
+  </div> 
+</div>
