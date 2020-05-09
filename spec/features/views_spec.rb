@@ -19,12 +19,11 @@ describe "user can delete each shelter from shelters index" do
   describe "they link from the shelters index" do
     it "deletes the shelter" do
 
-      shelter1 = create(:shelter)
-      shelter2 = create(:shelter)
+      shelter = create(:shelter)
         
       visit "/shelters/"
 
-      # expect(page).to have_field("Delete Shelter")
+      expect(page).to have_link("Delete", :href=>"/shelters/#{shelter.id}")
     end
   end
 end
