@@ -123,6 +123,20 @@ describe "user can click on pet name to take them to pets/id page" do
   end
 end
 
+describe "user can click on pet name to take them to pets/id page" do
+  describe "they link from the pets index" do
+    it "links to pets/id" do
+      
+      shelter = create(:shelter)
+      pet = create(:pet, shelter_id: "#{shelter.id}")
+      
+      visit "/shelters/#{shelter.id}/pets"
+      
+      expect(page).to have_link("#{pet.name}", :href=>"/pets/#{pet.id}")
+    end
+  end
+end
+
 # User Story 18, Pet Links
 
 # As a visitor
