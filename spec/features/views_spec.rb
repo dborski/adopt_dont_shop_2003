@@ -82,9 +82,9 @@ describe "user can delete each pet from pets/pets index" do
   end
 end
 
-describe "user can click on shelter name to take them to shelter page" do
+describe "user can click on shelter name to take them to shelters/id page" do
   describe "they link from the shelters index" do
-    it "links to shelter" do
+    it "links to shelters/id" do
       
       shelter = create(:shelter)
       
@@ -95,9 +95,9 @@ describe "user can click on shelter name to take them to shelter page" do
   end
 end
 
-describe "user can click on shelter name to take them to shelter page" do
+describe "user can click on shelter name to take them to shelters/id page" do
   describe "they link from the pets index" do
-    it "links to shelter" do
+    it "links to shelters/id" do
       
       shelter = create(:shelter)
       pet = create(:pet, shelter_id: "#{shelter.id}")
@@ -109,9 +109,22 @@ describe "user can click on shelter name to take them to shelter page" do
   end
 end
 
+describe "user can click on pet name to take them to pets/id page" do
+  describe "they link from the pets index" do
+    it "links to pets/id" do
+      
+      shelter = create(:shelter)
+      pet = create(:pet, shelter_id: "#{shelter.id}")
+      
+      visit "/pets/"
+      
+      expect(page).to have_link("#{pet.name}", :href=>"/pets/#{pet.id}")
+    end
+  end
+end
 
-# User Story 17, Shelter Links
+# User Story 18, Pet Links
 
 # As a visitor
-# When I click on the name a shelter anywhere on the site
-# Then that link takes me to that Shelter's show page
+# When I click on the name a pet anywhere on the site
+# Then that link takes me to that Pet's show page
