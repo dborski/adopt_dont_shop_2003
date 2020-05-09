@@ -75,17 +75,43 @@ describe "user can delete each pet from pets/pets index" do
       shelter = create(:shelter)
       pet = create(:pet, shelter_id: "#{shelter.id}")
       
-      visit "shelters/#{shelter.id}/pets/"
+      visit "/shelters/#{shelter.id}/pets/"
       
       # expect(page).to have_link("Delete Pet", :href=>"/pets/#{pet.id}/delete")
     end
   end
 end
 
-# User Story 16, Pet Delete From Pets Index Page
+describe "user can click on shelter name to take them to shelter page" do
+  describe "they link from the shelters index" do
+    it "links to shelter" do
+      
+      shelter = create(:shelter)
+      
+      visit "/shelters/"
+      
+      expect(page).to have_link("#{shelter.name}", :href=>"/shelters/#{shelter.id}")
+    end
+  end
+end
+
+describe "user can click on shelter name to take them to shelter page" do
+  describe "they link from the pets index" do
+    it "links to shelter" do
+      
+      shelter = create(:shelter)
+      pet = create(:pet, shelter_id: "#{shelter.id}")
+      
+      visit "/pets/"
+      
+      expect(page).to have_link("#{shelter.name}", :href=>"/shelters/#{shelter.id}")
+    end
+  end
+end
+
+
+# User Story 17, Shelter Links
 
 # As a visitor
-# When I visit the pets index page or a shelter pets index page
-# Next to every pet, I see a link to delete that pet
-# When I click the link
-# I should be taken to the pets index page where I no longer see that pet
+# When I click on the name a shelter anywhere on the site
+# Then that link takes me to that Shelter's show page
