@@ -44,21 +44,48 @@ end
 describe "user can edit each shelter from shelters/pets index" do
   describe "they link from the shelter/pets index" do
     it "edits the shelter" do
-
+      
       shelter = create(:shelter)
       pet = create(:pet, shelter_id: "#{shelter.id}")
-        
+      
       visit "shelters/#{shelter.id}/pets/"
-
+      
       expect(page).to have_link("Edit Pet", :href=>"/pets/#{pet.id}/edit")
     end
   end
 end
 
-# User Story 15, Pet Update From Pets Index Page
+describe "user can delete each pet from pets index" do
+  describe "they link from the pets index" do
+    it "deletes the pet" do
+
+      pet = create(:pet)
+        
+      visit "/pets/"
+
+      # expect(page).to have_link("Delete Pet", :href=>"/pets/#{pet.id}/delete")
+    end
+  end
+end
+
+describe "user can delete each pet from pets/pets index" do
+  describe "they link from the shelters/pets index" do
+    it "deletes the pet" do
+      
+      shelter = create(:shelter)
+      pet = create(:pet, shelter_id: "#{shelter.id}")
+      
+      visit "shelters/#{shelter.id}/pets/"
+      
+      # expect(page).to have_link("Delete Pet", :href=>"/pets/#{pet.id}/delete")
+    end
+  end
+end
+
+# User Story 16, Pet Delete From Pets Index Page
 
 # As a visitor
 # When I visit the pets index page or a shelter pets index page
-# Next to every pet, I see a link to edit that pet's info
+# Next to every pet, I see a link to delete that pet
 # When I click the link
-# I should be taken to that pets edit page where I can update its information just like in User Story 11
+# I should be taken to the pets index page where I no longer see that pet
