@@ -1,10 +1,14 @@
+<%= link_to "Pets", "/pets/"%> <%= link_to "Shelters", "/shelters/"%>
+
 <h1><%= "#{@pets.adoptable_pets.first.shelter.name}" "'s Adoptable Pets" %></h1>
 
 <% @pets.adoptable_pets.each do |pet| %>
-  <h2><%= pet.name %></h2>
+  <h2><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h2>
   <img src=<%= "#{pet.img_url}" %> alt=<%= "#{pet.id}" %> height="100" width="100">
   <p>Approximate Age: <%= pet.age %></p>
   <p>Sex: <%= pet.sex %></p>
+  <%= link_to "Edit Pet", "/pets/#{pet.id}/edit"%>
+  <%= button_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
 <% end %>
 
 <%= link_to "Create Pet", "/shelters/#{@pets.first.shelter.id}/pets/new" %>

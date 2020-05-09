@@ -1,9 +1,12 @@
+<%= link_to "Pets", "/pets/"%> <%= link_to "Shelters", "/shelters/"%>
+
 <h1>Shelters</h1>
 
 <ul>
   <% @shelters.each do |shelter| %>
     <li>
-      <%= shelter.name %>
+      <%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"  %> <%= link_to "Edit Shelter", "/shelters/#{shelter.id}/edit" %> 
+      <%= link_to "Delete Shelter", "/shelters/#{shelter.id}", method: :delete %>
     </li>
   <% end %>
 </ul>

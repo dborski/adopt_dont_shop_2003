@@ -1,3 +1,5 @@
+<%= link_to "Pets", "/pets/"%> <%= link_to "Shelters", "/shelters/"%>
+
 <h1><%= @shelter.name %></h1>
 <ul>
   <li><p><%= @shelter.address %></p></li>
@@ -13,3 +15,5 @@
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Shelter"/>
 </form>
+
+<h1><%= link_to "See our pets", "/shelters/#{@shelter.id}/pets"%></h2>
