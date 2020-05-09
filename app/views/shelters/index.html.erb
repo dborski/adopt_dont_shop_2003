@@ -1,6 +1,19 @@
-<%= link_to "Pets", "/pets/"%> <%= link_to "Shelters", "/shelters/"%>
+<div class="container">
+  <div class="row">
+    <div class="col-3 center">
+      <%= link_to "Pets", "/pets/"%> 
+    </div>
+    <div class="col-3 center">
+      <%= link_to "Shelters", "/shelters/"%> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 center">
+      <h1>Shelters</h1>
+    </div>
+  </div>
+</div>
 
-<h1>Shelters</h1>
 
 <ul>
   <% @shelters.each do |shelter| %>
