@@ -5,6 +5,7 @@
   <img src=<%= "#{pet.img_url}" %> alt=<%= "#{pet.id}" %> height="100" width="100">
   <p>Approximate Age: <%= pet.age %></p>
   <p>Sex: <%= pet.sex %></p>
+  <%= link_to "Edit Pet", "/pets/#{pet.id}/edit"%>
 <% end %>
 
 <%= link_to "Create Pet", "/shelters/#{@pets.first.shelter.id}/pets/new" %>
