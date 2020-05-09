@@ -1,3 +1,5 @@
+<%= link_to "Pets", "/pets/"%>
+
 <h1><%= "#{@pets.adoptable_pets.first.shelter.name}" "'s Adoptable Pets" %></h1>
 
 <% @pets.adoptable_pets.each do |pet| %>

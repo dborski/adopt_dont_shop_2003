@@ -137,8 +137,9 @@ describe "user can click on pet name to take them to pets/id page" do
   end
 end
 
-# User Story 18, Pet Links
+
+# User Story 19, Pet Index Link
 
 # As a visitor
-# When I click on the name a pet anywhere on the site
-# Then that link takes me to that Pet's show page
+# When I visit any page on the site
+# Then I see a link at the top of the page that takes me to the Pet Index
