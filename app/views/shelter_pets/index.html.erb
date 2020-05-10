@@ -12,6 +12,12 @@
       <h1><%= "#{@shelter.pets.adoptable_pets.first.shelter.name}" "'s Pets" %></h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-6 center">
+      <p>Total Pets: <%= "#{@shelter.pets.count_of_pets}"%></p>
+      <p>Adoptable Pets: <%= "#{@shelter.pets.count_of_adoptable_pets}"%></p>
+    </div>
+  </div>
 </div>
 <div class="container">
   <div class="row">
