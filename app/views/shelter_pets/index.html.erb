@@ -9,7 +9,7 @@
   </div>
   <div class="row">
     <div class="col-6 center">
-      <h1><%= "#{@shelter.pets.adoptable_pets.first.shelter.name}" "'s Pets" %></h1>
+      <h1><%= "#{@shelter.name}" "'s Pets" %></h1>
     </div>
   </div>
   <div class="row">
@@ -34,7 +34,7 @@
   </div>
   <div class="row">
     <div class="col-6 center">
-      <h2><%= link_to "Create Pet", "/shelters/#{@shelter.pets.first.shelter.id}/pets/new" %></h2>
+      <h2><%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %></h2>
     </div>
   </div>
 </div>
