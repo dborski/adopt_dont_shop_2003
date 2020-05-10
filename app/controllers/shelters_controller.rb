@@ -24,7 +24,6 @@ class SheltersController < ApplicationController
 
   def update
     shelter = Shelter.find(params[:shelter_id])
-
     shelter.update(shelter_params)
 
     shelter.save
