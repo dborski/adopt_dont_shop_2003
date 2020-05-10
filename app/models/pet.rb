@@ -15,4 +15,9 @@ class Pet < ApplicationRecord
   def self.count_of_adoptable_pets
     adoptable_pets.count
   end
+
+  def self.all_pets_by_adoption_status
+    Pet.order(:adoption_status)
+  end
+  
 end
