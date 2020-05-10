@@ -9,14 +9,22 @@ describe Pet, type: :model do
   end
   describe "methods" do
     it ".adoptable_pets" do
-      shelter = create(:shelter)
-      pet1 = create(:pet, shelter_id: "#{shelter.id}", adoption_status: "pending")
-      pet2 = create(:pet, shelter_id: "#{shelter.id}")
-      pet3 = create(:pet, shelter_id: "#{shelter.id}")
+      pet1 = create(:pet, adoption_status: "pending")
+      pet2 = create(:pet)
+      pet3 = create(:pet)
 
       pets = Pet.all
 
       expect(pets.adoptable_pets).to eq([pet2, pet3])
     end
-  end
+    it ".count_of_pets" do
+    pet1 = create(:pet, adoption_status: "pending")
+    pet2 = create(:pet)
+    pet3 = create(:pet)
+
+    pets = Pet.all
+
+    expect(pets.count_of_pets).to eq(3)
+    end 
+  end 
 end

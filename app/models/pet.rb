@@ -7,4 +7,9 @@ class Pet < ApplicationRecord
   def self.adoptable_pets
     select { |pet| pet.adoption_status == "adoptable" }
   end
+
+  def self.count_of_pets
+    Pet.count
+  end
+  
 end
