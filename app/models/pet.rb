@@ -11,5 +11,8 @@ class Pet < ApplicationRecord
   def self.count_of_pets
     Pet.count
   end
-  
+
+  def self.count_of_adoptable_pets
+    adoptable_pets.count
+  end
 end
