@@ -9,11 +9,11 @@ class PetsController < ApplicationController
   end
 
   def show
-    @pet = Pet.find(params[:id])
+    @pet = Pet.find(params[:pet_id])
   end
 
   def edit
-    @pet_id = params[:id]
+    @pet_id = params[:pet_id]
   end
 
   def create
@@ -21,27 +21,19 @@ class PetsController < ApplicationController
     pet = shelter.pets.create(pet_params)
 
     pet.save
-
     redirect_to "/shelters/#{shelter.id}/pets"
   end
 
   def update
-    pet = Pet.find(params[:id])
-    pet.update({
-      name: params[:name],
-      img_url: params[:img_url],
-      age: params[:age],
-      sex: params[:sex],
-      description: params[:description],
-    })
+    pet = Pet.find(params[:pet_id])
+    pet.update(pet_params)
 
     pet.save
-
     redirect_to "/pets/#{pet.id}"
   end
 
   def destroy
-    Pet.destroy(params[:id])
+    Pet.destroy(params[:pet_id])
 
     redirect_to "/pets/"
   end
