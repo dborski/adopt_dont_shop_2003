@@ -16,7 +16,7 @@
 <div class="container">
   <div class="row">
     <div class="col-6 center">
-      <% @pets.each do |pet| %>
+      <% @pets.all_pets_by_adoption_status.each do |pet| %>
         <h2><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h2>
         <img src=<%= "#{pet.img_url}" %> alt=<%= "#{pet.id}" %> height="100" width="100">
         <p>Approximate Age: <%= pet.age %></p>
